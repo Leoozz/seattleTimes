@@ -12,6 +12,7 @@
 </head>
 <body class="bg-[#ededed]">
     <div id="header"></div>
+    <div id="pub"></div>
     <main class="px-44 pb-12">
         <div class="adBeforeArticle bg-red-200">
             <img class="adContent">
@@ -45,6 +46,11 @@
       .then(res => res.text())
       .then(html => {
         document.getElementById('more').innerHTML = html;
+      });
+    fetch('adbanner/adbanner.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('pub').innerHTML = html;
       });
   </script>
 
