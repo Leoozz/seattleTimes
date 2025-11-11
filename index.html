@@ -25,7 +25,10 @@
                 <div id="content"></div>
                 <div id="more"></div>
             </div>
-            <div class="w-[30%] sticky top-4 selft-start max-h-[calc(100vh-100px)]" id="trending"></div>
+            <div class="w-[30%]">
+              <div class="mb-4" id="adtrending"></div>
+              <div class="sticky top-4 selft-start max-h-[calc(100vh-100px)]" id="trending"></div>
+            </div>
         </div>
     </main>
 
@@ -54,6 +57,11 @@
       .then(res => res.text())
       .then(html => {
         document.getElementById('pub').innerHTML = html;
+      });
+    fetch('adtrending.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('adtrending').innerHTML = html;
       });
   </script>
 
