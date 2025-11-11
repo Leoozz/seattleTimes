@@ -14,16 +14,8 @@
             <img class="adContent">
         </div>
         <div class="flex justify-center w-full mt-4 gap-4">
-            <div class="w-3/4 bg-red-100 h-full">
-                <div class="articleContent">
-                    <div class="artcileTitle">
-                        <h1>Household Robot NEO Under Fire After Accident Involving 6-Year-Old in Omaha</h1>
-                    </div>
-                    <div class="sous-titre">
-
-                    </div>
-                </div>
-
+            <div class="w-3/4 bg-white h-full">
+                <div id="content"></div>
             </div>
             <div class="w-1/4" id="trending"></div>
         </div>
@@ -39,6 +31,11 @@
       .then(res => res.text())
       .then(html => {
         document.getElementById('trending').innerHTML = html;
+      });
+    fetch('mainContent/heroArticle.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('content').innerHTML = html;
       });
   </script>
 
