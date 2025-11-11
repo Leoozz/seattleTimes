@@ -1,0 +1,95 @@
+/* ===== NAVBAR FOX42 ===== */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #2e2e2e;
+  color: white;
+  font-family: 'Open Sans', sans-serif
+}
+
+/* Partie gauche */
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+  background-color: #1f3f66;
+  height: 100%;
+  padding: 0 15px;
+}
+
+.menu-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.logo-img {
+  height: 60px; /* ajuste selon la taille souhaitée */
+  width: auto;
+}
+
+/* Liens centraux */
+.item-list ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-left a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.nav-center a:hover {
+  text-decoration: underline;
+}
+
+/* Partie droite (météo + recherche) */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding-right: 15px;
+}
+
+.weather {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.weather .icon {
+  font-size: 18px;
+}
+
+.forecast {
+  display: flex;
+  gap: 10px;
+  margin-left: 10px;
+  font-size: 12px;
+  color: #ccc;
+}
+
+.search-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Responsif : petite taille d’écran */
+@media (max-width: 900px) {
+  .nav-center {
+    display: none;
+  }
+  .forecast {
+    display: none;
+  }
+}
