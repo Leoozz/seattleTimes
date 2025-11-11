@@ -7,14 +7,14 @@
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="bg-[#ededed]">
     <div id="header"></div>
-    <main>
+    <main class="px-36 ">
         <div class="adBeforeArticle bg-red-200">
             <img class="adContent">
         </div>
-        <div class="mainContent">
-            <div class="colonne1">
+        <div class="flex justify-center w-full mt-4 gap-4">
+            <div class="w-3/4 bg-red-100 h-full">
                 <div class="articleContent">
                     <div class="artcileTitle">
                         <h1>Household Robot NEO Under Fire After Accident Involving 6-Year-Old in Omaha</h1>
@@ -24,11 +24,8 @@
                     </div>
                 </div>
 
-                </div>
             </div>
-            <div class="colonne2">
-                
-            </div>
+            <div class="w-1/4" id="trending"></div>
         </div>
     </main>
 
@@ -37,6 +34,11 @@
       .then(res => res.text())
       .then(html => {
         document.getElementById('header').innerHTML = html;
+      });
+    fetch('trending.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('trending').innerHTML = html;
       });
   </script>
 
