@@ -4,74 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Omaha News, Weather, Sports, Breaking News</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif !important;
+        }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 </head>
-<body>
-    <header class="navbar">
-        <div class="nav-left">
-            <div class="nav-wrapper">
-                <button class="menu-btn">☰</button>
-                <img src="ressources\images\kptm-logo.svg" alt="KPTM Logo" class="logo-img">
+<body class="bg-[#ededed]">
+    <div id="header"></div>
+    
+    <div id="pub"></div>
+    <main class="px-44 pb-12">
+        <div class="flex justify-center w-full mt-4 gap-4">
+            <div class="w-[70%] bg-white h-full pb-8">
+                <div id="content"></div>
+                <div id="more"></div>
             </div>
-            <div class="item-list">
-                <ul>
-                    <li><a href="https://fox42kptm.com/">NEWS</a></li>
-                    <li><a href="https://fox42kptm.com/weather">WEATHER</a></li>
-                    <li><a href="https://fox42kptm.com/sports">SPORTS</a></li>
-                    <li><a href="https://fox42kptm.com/features">FEATURES</a></li>
-                    <li><a href="https://fox42kptm.com/contets">CONTESTS</a></li>
-                    <li><a href="https://fox42kptm.com/watch">WATCH</a></li>
-                </ul>
-            </div>
-         </div>
-        
-        <div class="nav-right">
-            <div class="weather">
-                <a href="https://fox42kptm.com/weather">
-                    <div class="weatherNow">
-                        <div class="icon">☀️</div>
-                        <div class="temp">21°</div>
-                        <div class="day">NOW</div>
-                    </div>
-                    <div class="weatherDay1">
-                        <div class="icon">☀️</div>
-                        <div class="temp">21°</div>
-                        <div class="day">NOW</div>
-                    </div>
-                    <div class="weatherDay2">
-                        <div class="icon">☀️</div>
-                        <div class="temp">21°</div>
-                        <div class="day">NOW</div>
-                    </div>
-                </a>
-            </div>
-            <button class="search-btn">🔍</button>
-        </div>
-    </header>
-
-    <main>
-        <div class="adBeforeArticle">
-            <img class="adContent">
-        </div>
-        <div class="mainContent">
-            <div class="colonne1">
-                <div class="articleContent">
-                    <div class="artcileTitle">
-                        <h1>Household Robot NEO Under Fire After Accident Involving 6-Year-Old in Omaha</h1>
-                    </div>
-                    <div class="sous-titre">
-
-                    </div>
-                </div>
-
-                </div>
-            </div>
-            <div class="colonne2">
-                
-            </div>
+            <div class="w-[30%] sticky top-4 selft-start max-h-[calc(100vh-100px)]" id="trending"></div>
         </div>
     </main>
 
+    <script>
+    fetch('header.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('header').innerHTML = html;
+      });
+    fetch('trending.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('trending').innerHTML = html;
+      });
+    fetch('mainContent/heroArticle.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('content').innerHTML = html;
+      });
+    fetch('mainContent/articleCard.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('more').innerHTML = html;
+      });
+    fetch('adbanner/adbanner.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('pub').innerHTML = html;
+      });
+  </script>
 
 </body>
 </html>
