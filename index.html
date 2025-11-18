@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Omaha News, Weather, Sports, Breaking News</title>
+    <title>Household Robot NEO Under Fire After Scalding 6-Year-Old in Omaha Kitchen Accident</title>
+    <link rel="icon" type="image/x-icon" href="./ressources/images/kptm-favicon-32x32.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
@@ -25,7 +26,10 @@
                 <div id="content"></div>
                 <div id="more"></div>
             </div>
-            <div class="w-[30%] sticky top-4 selft-start max-h-[calc(100vh-100px)]" id="trending"></div>
+            <div class="w-[30%]">
+              <div class="mb-4" id="adtrending"></div>
+              <div class="sticky top-4 selft-start max-h-[calc(100vh-100px)]" id="trending"></div>
+            </div>
         </div>
     </main>
 
@@ -54,6 +58,11 @@
       .then(res => res.text())
       .then(html => {
         document.getElementById('pub').innerHTML = html;
+      });
+    fetch('adtrending.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('adtrending').innerHTML = html;
       });
   </script>
 
